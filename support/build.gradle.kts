@@ -9,8 +9,16 @@ tasks.withType<Jar> {
 }
 
 dependencies {
+    implementation(project(":common"))
     implementation(project(":core"))
+    testImplementation(testFixtures(project(":common")))
+    testImplementation(testFixtures(project(":core")))
 
     // Swagger
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.4")
+
+    // jwt
+    implementation("io.jsonwebtoken:jjwt-api:0.12.6")
+    implementation("io.jsonwebtoken:jjwt-impl:0.12.6")
+    implementation("io.jsonwebtoken:jjwt-jackson:0.12.6")
 }
