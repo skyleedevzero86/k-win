@@ -40,6 +40,7 @@ subprojects {
 	apply(plugin = "org.jetbrains.kotlin.plugin.jpa")
 	apply(plugin = "kotlin")
 	apply(plugin = "kotlin-kapt")
+	apply(plugin = "java-test-fixtures")
 
 	dependencies {
 		val kotestVersion = "5.9.1"

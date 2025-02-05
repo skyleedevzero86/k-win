@@ -1,5 +1,7 @@
 package com.support.global.exceptions
 
+import com.common.exceptions.CustomException
+import com.common.exceptions.response.ExceptionResponse
 import com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException
 import jakarta.servlet.http.HttpServletRequest
 import org.slf4j.LoggerFactory
@@ -9,7 +11,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException
 import org.springframework.web.bind.MethodArgumentNotValidException
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
-import com.common.exceptions.response.ExceptionResponse
+
 
 @RestControllerAdvice
 class GlobalExceptionAdvice {
