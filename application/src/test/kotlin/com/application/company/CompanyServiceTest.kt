@@ -80,7 +80,7 @@ class CompanyServiceTest : BehaviorSpec({
             } returns 회사_정상_생성(name = editFixture.name)
 
             Then("정상 수정이 된다") {
-                val result = companyService.editCompany(editFixture)
+                val result = companyService.updateCompany(editFixture)
                 result.name shouldBe editFixture.name
             }
         }
@@ -90,7 +90,7 @@ class CompanyServiceTest : BehaviorSpec({
 
             Then("예외를 발생시킨다") {
                 val exception = shouldThrow<CustomException> {
-                    companyService.editCompany(editFixture)
+                    companyService.updateCompany(editFixture)
                 }
                 exception.message shouldContain CompanyExceptionType.COMPANY_NOT_FOUND_EXCEPTION.message
             }

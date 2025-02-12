@@ -1,7 +1,7 @@
 package com.application.company
 
 import com.application.company.port.`in`.command.CompanyCreateCommand
-import com.application.company.port.`in`.command.CompanyEditCommand
+import com.application.company.port.`in`.command.CompanyUpdateCommand
 import com.core.domains.company.vo.CompanyType
 
 class CompanyApplicationFixture {
@@ -17,8 +17,8 @@ class CompanyApplicationFixture {
             )
         }
 
-        fun 회사_수정_커맨드_생성(companyId: Long?): CompanyEditCommand {
-            return CompanyEditCommand(
+        fun 회사_수정_커맨드_생성(companyId: Long?): CompanyUpdateCommand {
+            return CompanyUpdateCommand(
                 companyId ?: 0L,
                 name = "edit",
                 description = "this is winwin",
