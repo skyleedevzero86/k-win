@@ -1,4 +1,5 @@
-package com.core.config
+package com.adapter.global.config
+
 
 import com.querydsl.jpa.impl.JPAQueryFactory
 import jakarta.persistence.EntityManager

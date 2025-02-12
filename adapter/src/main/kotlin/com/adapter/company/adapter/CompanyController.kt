@@ -16,8 +16,9 @@ class CompanyController(
 ) : CompanyApi {
 
     override fun createCompany(@RequestBody request: CompanyCreateRequest): ResponseEntity<Unit> {
-        println(request.toString())
-        return ResponseEntity.created(URI.create("/companies/${1}"))
+        val createdCompanyId = companyUseCase.createCompany(request.toCommand())
+            .id
+        return ResponseEntity.created(URI.create("/companies/${createdCompanyId}"))
             .build()
     }
 }

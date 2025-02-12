@@ -3,6 +3,7 @@ package com.adapter.company.adapter.`in`.request
 import com.core.domains.company.vo.CompanyType
 import io.swagger.v3.oas.annotations.media.Schema
 import jakarta.validation.constraints.NotBlank
+import com.application.company.port.`in`.command.CompanyCreateCommand
 
 data class CompanyCreateRequest(
     @Schema(description = "회사명", example = "윈윈")
@@ -25,4 +26,13 @@ data class CompanyCreateRequest(
     @NotBlank
     val companyType: CompanyType,
 ) {
+    fun toCommand(): CompanyCreateCommand {
+        return CompanyCreateCommand(
+            name = name,
+            description = description,
+            address = address,
+            url = url,
+            companyType = companyType,
+        )
+    }
 }

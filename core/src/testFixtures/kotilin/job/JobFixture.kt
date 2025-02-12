@@ -1,4 +1,0 @@
-package job
-
-class JobFixture {
-}
