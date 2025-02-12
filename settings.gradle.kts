@@ -6,4 +6,5 @@ rootProject.name = "k-win"
 
 include("common")
 include("core")
-include("support")
+include("adapter")
+include("application")

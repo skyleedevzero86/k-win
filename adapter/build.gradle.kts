@@ -1,37 +1,26 @@
-plugins {
-    kotlin("jvm") version "1.9.25"
-    kotlin("plugin.spring") version "1.9.25"
-    id("org.springframework.boot") version "3.4.2"
-    id("io.spring.dependency-management") version "1.1.7"
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
+tasks.withType<BootJar> {
+    enabled = false
 }
 
-group = "com"
-version = "0.0.1-SNAPSHOT"
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
-
-repositories {
-    mavenCentral()
+tasks.withType<Jar> {
+    enabled = true
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
+    implementation(project(":common"))
+    implementation(project(":core"))
+    implementation(project(":application"))
+    testImplementation(testFixtures(project(":common")))
+    testImplementation(testFixtures(project(":core")))
+    testImplementation(testFixtures(project(":application")))
 
-kotlin {
-    compilerOptions {
-        freeCompilerArgs.addAll("-Xjsr305=strict")
-    }
-}
+    // Swagger
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.4")
 
-tasks.withType<Test> {
-    useJUnitPlatform()
+    // jwt
+    implementation("io.jsonwebtoken:jjwt-api:0.12.6")
+    implementation("io.jsonwebtoken:jjwt-impl:0.12.6")
+    implementation("io.jsonwebtoken:jjwt-jackson:0.12.6")
 }
