@@ -4,7 +4,7 @@ package com.application.company.port.`in`.command
 import com.core.domains.company.Company
 import com.core.domains.company.vo.CompanyType
 
-data class CompanyEditCommand(
+data class CompanyUpdateCommand(
     val companyId: Long,
     val name: String,
     val description: String,
