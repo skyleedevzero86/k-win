@@ -5,8 +5,10 @@ on:
     branches:
       - develop
     paths:
-      - web/**
+      - adapter/**
+      - application/**
       - core/**
+      - common/**
       - .github/**
 
 permissions:
