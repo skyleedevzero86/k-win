@@ -1,12 +1,10 @@
 package com.application.company
 
-import com.application.company.CompanyApplicationFixture.Companion.회사_수정_커맨드_생성
 import com.application.company.port.`in`.command.CompanyCreateCommand
 import com.application.company.port.out.CompanyRepositoryPort
 import com.common.global.exceptions.CustomException
 import com.core.domains.company.exception.CompanyExceptionType
 import com.core.domains.company.vo.CompanyType
-import company.CompanyFixture.Companion.회사_정상_생성
 import io.kotest.assertions.throwables.shouldNotThrowAny
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.BehaviorSpec
@@ -16,6 +14,7 @@ import io.mockk.coEvery
 import io.mockk.just
 import io.mockk.mockk
 import io.mockk.runs
+import com.application.company.CompanyApplicationFixture.Companion.회사_수정_커맨드_생성
 
 class CompanyServiceTest : BehaviorSpec({
     val companyRepositoryPort = mockk<CompanyRepositoryPort>()

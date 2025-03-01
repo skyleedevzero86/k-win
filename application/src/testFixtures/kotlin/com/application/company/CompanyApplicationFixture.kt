@@ -4,6 +4,7 @@ import com.application.company.port.`in`.command.CompanyCreateCommand
 import com.application.company.port.`in`.command.CompanyUpdateCommand
 import com.core.domains.company.vo.CompanyType
 
+
 class CompanyApplicationFixture {
 
     companion object {

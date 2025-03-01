@@ -26,8 +26,4 @@ class JasyptConfig {
             }
             setConfig(config)
         }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e48f89f (feat:레파지토리 정리)
